@@ -1,114 +1,122 @@
-'use client';
-
 import React from 'react';
-import { Sparkles, Globe, Layout, Lightbulb } from 'lucide-react';
+import { Palette, Monitor, Layers, Target } from 'lucide-react';
 
-export default function App() {
+export default function NexusStudioHero() {
   return (
-    <>
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/bg.jpg)', // Place your background image (Nike sneakers reflection) in public/bg.jpg
-          }}
-        />
-        
-        {/* Dark Overlay for Better Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+    <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/bg.jpg)' }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col min-h-screen">
-          {/* Navigation */}
-          <nav className="container mx-auto px-6 py-8">
-            <div className="flex items-center justify-between">
-              <h1 className="text-2xl font-bold tracking-tight">Nexus Studio</h1>
-              <div className="hidden md:flex items-center gap-8 text-sm">
-                <a href="#" className="hover:text-gray-300 transition">About us</a>
-                <a href="#" className="hover:text-gray-300 transition">Services</a>
-                <a href="#" className="hover:text-gray-300 transition">Projects</a>
-                <button className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition duration-300">
-                  Get Support
+      {/* Content */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Header */}
+        <header className="flex items-center justify-between p-6 lg:p-8">
+          <div className="text-white text-xl lg:text-2xl font-bold">
+            Nexus Studio
+          </div>
+          <nav className="flex items-center gap-4 lg:gap-8">
+            <a href="#about" className="text-white/90 hover:text-white transition-colors text-sm lg:text-base hidden sm:inline">
+              About us
+            </a>
+            <a href="#services" className="text-white/90 hover:text-white transition-colors text-sm lg:text-base hidden sm:inline">
+              Services
+            </a>
+            <a href="#projects" className="text-white/90 hover:text-white transition-colors text-sm lg:text-base hidden sm:inline">
+              Projects
+            </a>
+            <button className="bg-white text-gray-900 px-4 lg:px-6 py-2 rounded hover:bg-gray-100 transition-colors text-sm lg:text-base font-medium">
+              Get Support
+            </button>
+          </nav>
+        </header>
+
+        {/* Hero Section */}
+        <main className="flex-1 flex items-center px-6 lg:px-16 xl:px-24">
+          <div className="max-w-7xl w-full">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
+                Bold ideas, beautiful digital design.
+              </h1>
+              <p className="text-white/90 text-base lg:text-lg mb-8 max-w-xl">
+                Nexus Studio helps you bring bold ideas to life with sleek, modern digital design—perfect for portfolios, agencies, startups, and creative professionals.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button className="bg-white text-gray-900 px-6 lg:px-8 py-3 rounded font-medium hover:bg-gray-100 transition-all hover:scale-105 active:scale-95">
+                  Book A Call
+                </button>
+                <button className="bg-white/10 backdrop-blur-sm text-white px-6 lg:px-8 py-3 rounded font-medium hover:bg-white/20 transition-all hover:scale-105 active:scale-95 border border-white/20">
+                  Watch Video
                 </button>
               </div>
             </div>
-          </nav>
+          </div>
+        </main>
 
-          {/* Hero Section */}
-          <main className="flex-1 flex items-center">
-            <div className="container mx-auto px-6">
-              <div className="max-w-4xl">
-                <h2 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                  Bold ideas, beautiful digital design.
-                </h2>
-                <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl">
-                  Nexus Studio helps you bring bold ideas to life with sleek, modern digital design—perfect for portfolios, agencies, startups, and creative professionals.
-                </p>
-
-                {/* Buttons */}
-                <div className="flex flex-wrap gap-4">
-                  <button className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition duration-300 transform hover:scale-105">
-                    Book a Call
-                  </button>
-                  <button className="border border-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-black transition duration-300 transform hover:scale-105">
-                    Watch Video
-                  </button>
-                </div>
-              </div>
-            </div>
-          </main>
-
-          {/* Services Section */}
-          <section className="container mx-auto px-6 py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Services Section */}
+        <section className="px-6 lg:px-16 xl:px-24 pb-12 lg:pb-16">
+          <div className="max-w-7xl w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* Branding */}
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
-                  <Lightbulb className="w-8 h-8" />
+              <div className="group cursor-pointer">
+                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all hover:scale-105">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                    <Palette className="w-6 h-6 text-red-400" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">Branding</h3>
+                  <p className="text-white/70 text-sm">
+                    Craft unique narratives that capture attention and elevate your brand's voice.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Branding</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Craft unique identities that capture attention and define your brand's voice.
-                </p>
               </div>
 
               {/* Web Design */}
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
-                  <Globe className="w-8 h-8" />
+              <div className="group cursor-pointer">
+                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all hover:scale-105">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                    <Monitor className="w-6 h-6 text-red-400" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">Web Design</h3>
+                  <p className="text-white/70 text-sm">
+                    Design modern, responsive websites that look stunning on every device.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Web Design</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Design modern, responsive websites that look stunning on every device.
-                </p>
               </div>
 
               {/* UI/UX Design */}
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
-                  <Layout className="w-8 h-8" />
+              <div className="group cursor-pointer">
+                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all hover:scale-105">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                    <Layers className="w-6 h-6 text-red-400" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">UI/UX Design</h3>
+                  <p className="text-white/70 text-sm">
+                    Create seamless experiences that delight users and drive lasting engagement.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">UI/UX Design</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Create seamless experiences that delight users and drive lasting engagement.
-                </p>
               </div>
 
               {/* Strategy */}
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
-                  <Sparkles className="w-8 h-8" />
+              <div className="group cursor-pointer">
+                <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all hover:scale-105">
+                  <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                    <Target className="w-6 h-6 text-red-400" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">Strategy</h3>
+                  <p className="text-white/70 text-sm">
+                    Develop smart digital strategies that connect vision with impactful execution.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Strategy</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Develop smart digital strategies that connect vision with impactful execution.
-                </p>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
-    </>
+    </div>
   );
-}
+      }
